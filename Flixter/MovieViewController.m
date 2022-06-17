@@ -6,9 +6,12 @@
 //
 
 #import "MovieViewController.h"
+#import "MovieCell.h"
+//#import "UIImageview+AFNetworking.h"
 
 @interface MovieViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *TableView;
+@property (nonatomic, strong) NSArray *movies;
 
 @end
 
@@ -33,10 +36,15 @@
                
 //               NSLog(@"%@", dataDictionary);// log an object with the %@ formatter.
                // TODO: Get the array of movies
-               NSArray *myArray = dataDictionary[@"keyForAnArray"];
+               self.movies = dataDictionary[@"results"];
+               for (NSDictionary *movies in self.movies)
+               {
+                   NSLog(@"%@", movies[@"title"]);
+               }
 //               NSLog(@"%@", dataDictionary);
                // TODO: Store the movies in a property to use elsewhere
                // TODO: Reload your table view data
+               [self.TableView reloadData];
            }
        }];
     [task resume];
@@ -58,13 +66,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
     NSDictionary *movie = self.movies[indexPath.row];
-    cell.textLabel.text = movie [@"title"];
+    cell.MovieTitle.text = movie [@"title"];
+    cell.MovieDescription.text = movie [@"overview"];
     
-    NSLog(@"%@", [NSString stringWithFormat:@"row: %d, section %d", indexPath.row, indexPath.section]);//prints out table row count
     
-    cell.textLabel.text = [NSString stringWithFormat:@"row: %d, section %d", indexPath.row, indexPath.section];
+//    NSString *baseURLString = @"
     
     return cell;
 }
