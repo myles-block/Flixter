@@ -11,8 +11,6 @@
 #import "InfoPageViewController.h"
 
 @interface MovieViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *ActivityIndicator;
-
 @property (weak, nonatomic) IBOutlet UITableView *TableView;
 @property (nonatomic, strong) NSArray *movies;
 @end
@@ -48,15 +46,8 @@
                // TODO: Reload your table view data
                [self.TableView reloadData];
            }
-    
-    }];
+       }];
     [task resume];
-    
-    [self.ActivityIndicator startAnimating];
-
-    // Stop the activity indicator
-    // Hides automatically if "Hides When Stopped" is enabled
-    [self.ActivityIndicator stopAnimating];
     // Do any additional setup after loading the view.
 }
 
