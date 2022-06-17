@@ -42,10 +42,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VR2-NJ-cQa">
+                                                    <rect key="frame" x="11" y="6" width="151" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="MovieDescription" destination="6Om-Ae-igK" id="6Fn-QR-tAn"/>
+                                            <outlet property="MovieImage" destination="VR2-NJ-cQa" id="CWY-6O-tE8"/>
                                             <outlet property="MovieTitle" destination="WYu-zG-SRo" id="AFN-7z-Lxz"/>
                                         </connections>
                                     </tableViewCell>
