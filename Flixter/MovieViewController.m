@@ -11,6 +11,7 @@
 #import "InfoPageViewController.h"
 
 @interface MovieViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *ActivityIndicator;
 @property (weak, nonatomic) IBOutlet UITableView *TableView;
 @property (nonatomic, strong) NSArray *movies;
 @end
@@ -19,9 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    // Start the activity indicator
+    [self.ActivityIndicator startAnimating];//doesn't animate
+
     self.TableView.dataSource = self;
     self.TableView.delegate = self;
+    
+    // Stop the activity indicator
+    // Hides automatically if "Hides When Stopped" is enabled
+    
     
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=66fe3a93e9f4d8ebf87b88234f2739df"];
     //API Key changed to v3
@@ -45,6 +52,7 @@
                // TODO: Store the movies in a property to use elsewhere
                // TODO: Reload your table view data
                [self.TableView reloadData];
+               [self.ActivityIndicator stopAnimating];//doesn't work
            }
        }];
     [task resume];
