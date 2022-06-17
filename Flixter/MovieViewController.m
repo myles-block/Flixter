@@ -8,6 +8,7 @@
 #import "MovieViewController.h"
 #import "MovieCell.h"
 #import "UIImageview+AFNetworking.h"
+#import "InfoPageViewController.h"
 
 @interface MovieViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *TableView;
@@ -50,15 +51,21 @@
     // Do any additional setup after loading the view.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // Pass the selected object to the new view controller.h
+    NSIndexPath *index = self.TableView.indexPathForSelectedRow;
+    
+    NSDictionary *dataToPass = self.movies[index.row];
+    InfoPageViewController *detailVC = [segue destinationViewController];
+    detailVC.detailDict = dataToPass;
+
 }
-*/
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.movies.count;

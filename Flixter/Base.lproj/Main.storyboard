@@ -52,6 +52,7 @@
                                             <outlet property="MovieDescription" destination="6Om-Ae-igK" id="6Fn-QR-tAn"/>
                                             <outlet property="MovieImage" destination="VR2-NJ-cQa" id="CWY-6O-tE8"/>
                                             <outlet property="MovieTitle" destination="WYu-zG-SRo" id="AFN-7z-Lxz"/>
+                                            <segue destination="Oea-Y0-1tZ" kind="show" id="kQO-bX-Pdn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -68,6 +69,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1008.6956521739131" y="87.723214285714278"/>
+        </scene>
+        <!--Info Page View Controller-->
+        <scene sceneID="ABx-GN-wsv">
+            <objects>
+                <viewController id="Oea-Y0-1tZ" customClass="InfoPageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SRs-Gw-DrI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MRT-kL-T06">
+                                <rect key="frame" x="52" y="88" width="311" height="297"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8r-hx-Kmb">
+                                <rect key="frame" x="111" y="489" width="192" height="147"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r28-5y-7pD">
+                                <rect key="frame" x="20" y="431" width="374" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nxt-Bf-zXu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uKa-iv-IFD"/>
+                    <connections>
+                        <outlet property="MovieDescription" destination="x8r-hx-Kmb" id="n7b-da-JFn"/>
+                        <outlet property="MovieImage" destination="MRT-kL-T06" id="8w1-9L-gM3"/>
+                        <outlet property="MovieTitle" destination="r28-5y-7pD" id="lfR-Dy-idB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zUd-r4-E4U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1742.0289855072465" y="87.723214285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v3m-Sc-3Oe">
