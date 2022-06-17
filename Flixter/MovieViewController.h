@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MovieViewController : ViewController
+@property (nonatomic, strong) NSArray *myArray;
 
 @end
 
