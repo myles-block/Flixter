@@ -39,6 +39,7 @@
                NSLog(@"%@", [error localizedDescription]);
            }
            else {
+               [self.ActivityIndicator stopAnimating];//doesn't work
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                
 //               NSLog(@"%@", dataDictionary);// log an object with the %@ formatter.
@@ -52,7 +53,7 @@
                // TODO: Store the movies in a property to use elsewhere
                // TODO: Reload your table view data
                [self.TableView reloadData];
-               [self.ActivityIndicator stopAnimating];//doesn't work
+               
            }
        }];
     [task resume];

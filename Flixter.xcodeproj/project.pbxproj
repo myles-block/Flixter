@@ -10,6 +10,8 @@
 		1CF0C72E3A93FE397325D9EE /* Pods_Flixter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25104CC005C8CE504D24B4AB /* Pods_Flixter.framework */; };
 		5F0AB7877B8B2CF94D7012F3 /* Pods_FlixterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4653F3E7A994A28721B46A3E /* Pods_FlixterTests.framework */; };
 		F1E725B328DB167CFE14D545 /* Pods_Flixter_FlixterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFBC628B1FC7B190611BAE9 /* Pods_Flixter_FlixterUITests.framework */; };
+		F303F519285D435E00920069 /* MovieCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F303F518285D435E00920069 /* MovieCollectionViewController.m */; };
+		F303F51C285D44C200920069 /* CollectionViewMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F303F51B285D44C200920069 /* CollectionViewMovieCell.m */; };
 		F310D437285BED6B00412E3F /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F310D436285BED6B00412E3F /* MovieViewController.m */; };
 		F3E36A7A285D002800748940 /* InfoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E36A79285D002800748940 /* InfoPageViewController.m */; };
 		F3EC440A285A48A900EC1F97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EC4409285A48A900EC1F97 /* AppDelegate.m */; };
@@ -52,6 +54,10 @@
 		A483D836C9B1ED85F7CB4F65 /* Pods-Flixter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flixter.release.xcconfig"; path = "Target Support Files/Pods-Flixter/Pods-Flixter.release.xcconfig"; sourceTree = "<group>"; };
 		C50823948621D11C7D084D3C /* Pods-Flixter-FlixterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flixter-FlixterUITests.debug.xcconfig"; path = "Target Support Files/Pods-Flixter-FlixterUITests/Pods-Flixter-FlixterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DDFBC628B1FC7B190611BAE9 /* Pods_Flixter_FlixterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flixter_FlixterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F303F517285D435E00920069 /* MovieCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCollectionViewController.h; sourceTree = "<group>"; };
+		F303F518285D435E00920069 /* MovieCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCollectionViewController.m; sourceTree = "<group>"; };
+		F303F51A285D44C200920069 /* CollectionViewMovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewMovieCell.h; sourceTree = "<group>"; };
+		F303F51B285D44C200920069 /* CollectionViewMovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewMovieCell.m; sourceTree = "<group>"; };
 		F310D435285BED6B00412E3F /* MovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		F310D436285BED6B00412E3F /* MovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		F3E36A78285D002800748940 /* InfoPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoPageViewController.h; sourceTree = "<group>"; };
@@ -160,12 +166,16 @@
 				F3EC440E285A48A900EC1F97 /* ViewController.h */,
 				F3EC440F285A48A900EC1F97 /* ViewController.m */,
 				F3EC4411285A48A900EC1F97 /* Main.storyboard */,
+				F303F51A285D44C200920069 /* CollectionViewMovieCell.h */,
+				F303F51B285D44C200920069 /* CollectionViewMovieCell.m */,
+				F303F517285D435E00920069 /* MovieCollectionViewController.h */,
+				F303F518285D435E00920069 /* MovieCollectionViewController.m */,
 				F310D435285BED6B00412E3F /* MovieViewController.h */,
+				F310D436285BED6B00412E3F /* MovieViewController.m */,
 				F3E36A78285D002800748940 /* InfoPageViewController.h */,
 				F3E36A79285D002800748940 /* InfoPageViewController.m */,
 				F3FBFA22285CE9F400EE309D /* MovieCell.h */,
 				F3FBFA23285CE9F400EE309D /* MovieCell.m */,
-				F310D436285BED6B00412E3F /* MovieViewController.m */,
 				F3EC4414285A48AB00EC1F97 /* Assets.xcassets */,
 				F3EC4416285A48AB00EC1F97 /* LaunchScreen.storyboard */,
 				F3EC4419285A48AB00EC1F97 /* Info.plist */,
@@ -433,7 +443,9 @@
 				F3EC4410285A48A900EC1F97 /* ViewController.m in Sources */,
 				F310D437285BED6B00412E3F /* MovieViewController.m in Sources */,
 				F3FBFA24285CE9F400EE309D /* MovieCell.m in Sources */,
+				F303F51C285D44C200920069 /* CollectionViewMovieCell.m in Sources */,
 				F3EC440A285A48A900EC1F97 /* AppDelegate.m in Sources */,
+				F303F519285D435E00920069 /* MovieCollectionViewController.m in Sources */,
 				F3EC441B285A48AB00EC1F97 /* main.m in Sources */,
 				F3EC440D285A48A900EC1F97 /* SceneDelegate.m in Sources */,
 			);
