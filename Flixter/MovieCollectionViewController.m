@@ -36,15 +36,15 @@
 }
 */
 
-//- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-//    //need Dictionary to pull API request from or something...idk
-//    return 0;//struggle pulling images into collection
-//}
-//
-//- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-//    return 0;//struggle pulling images into collection
-//
-//}
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    //need Dictionary to pull API request from or something...idk
+    return 0;//struggle pulling images into collection
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 0;//struggle pulling images into collection
+
+}
 
 
 @end

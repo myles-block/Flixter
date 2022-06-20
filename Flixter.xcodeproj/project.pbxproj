@@ -12,11 +12,10 @@
 		BF85ECCD85439FED651C950C /* Pods_Flixter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19E3B00C63FFF71EA5B8135 /* Pods_Flixter.framework */; };
 		F303F519285D435E00920069 /* MovieCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F303F518285D435E00920069 /* MovieCollectionViewController.m */; };
 		F303F51C285D44C200920069 /* CollectionViewMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F303F51B285D44C200920069 /* CollectionViewMovieCell.m */; };
-		F310D437285BED6B00412E3F /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F310D436285BED6B00412E3F /* MovieViewController.m */; };
+		F33BC0BA2860EBAF00B6EF2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33BC0B92860EBAF00B6EF2F /* ViewController.m */; };
 		F3E36A7A285D002800748940 /* InfoPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E36A79285D002800748940 /* InfoPageViewController.m */; };
 		F3EC440A285A48A900EC1F97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EC4409285A48A900EC1F97 /* AppDelegate.m */; };
 		F3EC440D285A48A900EC1F97 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EC440C285A48A900EC1F97 /* SceneDelegate.m */; };
-		F3EC4410285A48A900EC1F97 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EC440F285A48A900EC1F97 /* ViewController.m */; };
 		F3EC4413285A48A900EC1F97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3EC4411285A48A900EC1F97 /* Main.storyboard */; };
 		F3EC4415285A48AB00EC1F97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EC4414285A48AB00EC1F97 /* Assets.xcassets */; };
 		F3EC4418285A48AB00EC1F97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3EC4416285A48AB00EC1F97 /* LaunchScreen.storyboard */; };
@@ -59,6 +58,8 @@
 		F303F51B285D44C200920069 /* CollectionViewMovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewMovieCell.m; sourceTree = "<group>"; };
 		F310D435285BED6B00412E3F /* MovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		F310D436285BED6B00412E3F /* MovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
+		F33BC0B82860EBAF00B6EF2F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F33BC0B92860EBAF00B6EF2F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F3E36A78285D002800748940 /* InfoPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoPageViewController.h; sourceTree = "<group>"; };
 		F3E36A79285D002800748940 /* InfoPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoPageViewController.m; sourceTree = "<group>"; };
 		F3EC4405285A48A900EC1F97 /* Flixter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flixter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,8 +67,6 @@
 		F3EC4409285A48A900EC1F97 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F3EC440B285A48A900EC1F97 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		F3EC440C285A48A900EC1F97 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		F3EC440E285A48A900EC1F97 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F3EC440F285A48A900EC1F97 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F3EC4412285A48A900EC1F97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3EC4414285A48AB00EC1F97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3EC4417285A48AB00EC1F97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -163,14 +162,14 @@
 				F3EC4409285A48A900EC1F97 /* AppDelegate.m */,
 				F3EC440B285A48A900EC1F97 /* SceneDelegate.h */,
 				F3EC440C285A48A900EC1F97 /* SceneDelegate.m */,
-				F3EC440E285A48A900EC1F97 /* ViewController.h */,
-				F3EC440F285A48A900EC1F97 /* ViewController.m */,
 				F3EC4411285A48A900EC1F97 /* Main.storyboard */,
 				F303F51A285D44C200920069 /* CollectionViewMovieCell.h */,
 				F303F51B285D44C200920069 /* CollectionViewMovieCell.m */,
 				F303F517285D435E00920069 /* MovieCollectionViewController.h */,
 				F303F518285D435E00920069 /* MovieCollectionViewController.m */,
 				F310D435285BED6B00412E3F /* MovieViewController.h */,
+				F33BC0B82860EBAF00B6EF2F /* ViewController.h */,
+				F33BC0B92860EBAF00B6EF2F /* ViewController.m */,
 				F310D436285BED6B00412E3F /* MovieViewController.m */,
 				F3E36A78285D002800748940 /* InfoPageViewController.h */,
 				F3E36A79285D002800748940 /* InfoPageViewController.m */,
@@ -440,9 +439,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3E36A7A285D002800748940 /* InfoPageViewController.m in Sources */,
-				F3EC4410285A48A900EC1F97 /* ViewController.m in Sources */,
-				F310D437285BED6B00412E3F /* MovieViewController.m in Sources */,
 				F3FBFA24285CE9F400EE309D /* MovieCell.m in Sources */,
+				F33BC0BA2860EBAF00B6EF2F /* ViewController.m in Sources */,
 				F303F51C285D44C200920069 /* CollectionViewMovieCell.m in Sources */,
 				F3EC440A285A48A900EC1F97 /* AppDelegate.m in Sources */,
 				F303F519285D435E00920069 /* MovieCollectionViewController.m in Sources */,
