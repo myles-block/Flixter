@@ -54,15 +54,20 @@
 
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSIndexPath *index = self.collectionView.indexPathsForSelectedItems[0];
+    
+    NSDictionary *dataToPass = self.movies[index.row];
+    InfoPageViewController *detailVC = [segue destinationViewController];
+    detailVC.detailDict = dataToPass;
+//     Get the new view controller using [segue destinationViewController].
+//     Pass the selected object to the new view controller.
 }
-*/
+
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     //need Dictionary to pull API request from or something...idk

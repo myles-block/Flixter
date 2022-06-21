@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *ActivityIndicator;
 @property (weak, nonatomic) IBOutlet UITableView *TableView;
 @property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @end
 
 @implementation MovieViewController
@@ -26,9 +27,23 @@
     self.TableView.dataSource = self;
     self.TableView.delegate = self;
     
+    [self fetchMovies];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action: @selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
+    self.TableView.refreshControl = self.refreshControl;
+    
+    
+    
     // Stop the activity indicator
     // Hides automatically if "Hides When Stopped" is enabled
     
+    
+
+    // Do any additional setup after loading the view.
+}
+
+- (void)fetchMovies {
     
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=66fe3a93e9f4d8ebf87b88234f2739df"];
     //API Key changed to v3
@@ -53,11 +68,10 @@
                // TODO: Store the movies in a property to use elsewhere
                // TODO: Reload your table view data
                [self.TableView reloadData];
-               
+               [self.refreshControl endRefreshing];
            }
        }];
-    [task resume];
-    // Do any additional setup after loading the view.
+    [task resume];//runs block of code
 }
 
 
