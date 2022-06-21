@@ -11,6 +11,7 @@
 
 @interface MovieCollectionViewController () <UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) NSArray *movies;
 
 @end
 
@@ -20,6 +21,33 @@
     [super viewDidLoad];
     self.collectionView.dataSource = self;
     
+    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=66fe3a93e9f4d8ebf87b88234f2739df"];
+    //API Key changed to v3
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+           if (error != nil) {
+               NSLog(@"%@", [error localizedDescription]);
+           }
+           else {
+               NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+               
+//               NSLog(@"%@", dataDictionary);// log an object with the %@ formatter.
+               // TODO: Get the array of movies
+               self.movies = dataDictionary[@"results"];
+               for (NSDictionary *movies in self.movies)
+               {
+                   NSLog(@"%@", movies[@"title"]);
+               }
+//               NSLog(@"%@", dataDictionary);
+               // TODO: Store the movies in a property to use elsewhere
+               // TODO: Reload your table view data
+               [self.collectionView reloadData];
+               
+           }
+       }];
+    [task resume];
+    // Do any additional setup after loading the view.
     
     // Do any additional setup after loading the view.
 }
@@ -38,11 +66,28 @@
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     //need Dictionary to pull API request from or something...idk
-    return 0;//struggle pulling images into collection
+    //struggle pulling images into collection
+    CollectionViewMovieCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:(@"CollectionViewMovieCell") forIndexPath:(indexPath)];
+    
+    NSDictionary *movie = self.movies[indexPath.row];
+    //accessing
+//    cell.MovieTitle.text = movie[@"title"];
+//    cell.MovieDescription.text = movie[@"overview"];
+    
+    
+    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+    NSString *posterURLString = movie[@"poster_path"];
+    NSString *completePosterURLString = [baseURLString stringByAppendingString:posterURLString];
+    NSURL *posterURL = [NSURL URLWithString:completePosterURLString];
+    [cell.movieImage setImageWithURL:posterURL];
+    
+    
+    
+    return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 0;//struggle pulling images into collection
+    return self.movies.count;//struggle pulling images into collection
 
 }
 
