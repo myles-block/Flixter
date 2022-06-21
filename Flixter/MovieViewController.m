@@ -22,16 +22,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Start the activity indicator
-    [self.ActivityIndicator startAnimating];//doesn't animate
+    [self.ActivityIndicator startAnimating];//Created Activity Indicator
 
     self.TableView.dataSource = self;
     self.TableView.delegate = self;
     
-    [self fetchMovies];
+    [self fetchMovies];//Calls the fetch movies function intially
     
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action: @selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
-    self.TableView.refreshControl = self.refreshControl;
+    self.refreshControl = [[UIRefreshControl alloc] init];//connects refreshcontrol to self
+    [self.refreshControl addTarget:self action: @selector(fetchMovies) forControlEvents:UIControlEventValueChanged];//when beginning of refresh control is triggered it reruns fetchMovies
+    self.TableView.refreshControl = self.refreshControl;//end of refreshControl
     
     
     
@@ -52,6 +52,14 @@
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) {
                NSLog(@"%@", [error localizedDescription]);
+               UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"No Internet Connection" message:@"No stable internet connection found to pull your feed. Please refresh and try again." preferredStyle:UIAlertControllerStyleAlert];
+               
+               UIAlertAction *buttonOk = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//                   [self actionOk];
+               }];
+                  
+               [controller addAction:buttonOk];
+               [self presentViewController:controller animated:YES completion:nil];
            }
            else {
                [self.ActivityIndicator stopAnimating];//doesn't work
@@ -71,8 +79,9 @@
                [self.refreshControl endRefreshing];
            }
        }];
-    [task resume];//runs block of code
+    [task resume];//runs block of code at the end of it's rsepective cue
 }
+
 
 
 #pragma mark - Navigation
